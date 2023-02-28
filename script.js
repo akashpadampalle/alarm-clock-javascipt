@@ -78,7 +78,14 @@ function validateTime(textTime){
         hours += 12;
     }
 
-    return (new Date()).setHours(hours, minuts, seconds, 0);
+    let alarmDate = new Date();
+    alarmDate.setHours(hours, minuts, seconds, 0);
+
+    if(alarmDate.getTime() - (new Date()) < 0){
+        alarmDate.setDate(alarmDate.getDate() + 1);
+    }
+        return alarmDate;
+//     return (new Date()).setHours(hours, minuts, seconds, 0);
 }
 
 
@@ -91,7 +98,7 @@ function addAlarm(){
     let id = (new Date()).getTime();
 
     let title = alarmTitleInputBox.value;
-    let time = validateTime(alarmTimeInputBox.value);
+    let time = validateTime(alarmTimeInputBox.value).getTime();
     
 
     //resetting Time input fiels
@@ -120,12 +127,8 @@ function addAlarm(){
 
 
 
-// sets timeout function as an alarm if timeInMillisecond are positive else return false
+// sets timeout function as an alarm 
 function createAlarm(timeInMillisecond, title, id){
-    if(timeInMillisecond <= 0){
-        showAlert("can\'t create a alarm : time is in past")
-        return false;
-    }
 
     return setTimeout( function() {
         showAlert(title);
