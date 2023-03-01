@@ -111,11 +111,6 @@ function addAlarm(){
     }
 
     let timeoutId = createAlarm(time - (new Date()).getTime(), title, id);
-    
-    //exit adding alarm if timeoutId returns false
-    if(!timeoutId){
-        return;
-    }
 
 
     //creating alarm object and adding it to the array
