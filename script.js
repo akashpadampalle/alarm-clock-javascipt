@@ -1,9 +1,10 @@
 // all alarms will be store in this array in the for of alarm object
 /* 
 Alarm{
-    id : "id of alarm",
-    time: "ringing time",
-    title: "purpose of alarm"
+     this.id = id;
+     this.timeoutId = timeoutId;
+     this.time = time;
+     this.title = title;
 }
 */
 let alarms = [];
