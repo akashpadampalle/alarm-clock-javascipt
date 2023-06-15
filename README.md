@@ -1,6 +1,8 @@
 # alarm-clock-javascipt
 alarm clock works for only one day
 
+## Link - https://akashpadampalle.github.io/alarm-clock-javascipt/
+
 
 please enter time in "hh:mm:ss am/pm" formate
 hh {0, 12}
